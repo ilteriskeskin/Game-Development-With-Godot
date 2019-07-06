@@ -8,8 +8,9 @@ func _ready():
 	
 func _input(event):
 	event = camera.make_input_local(event)
-	if event.InputEventScreenTouch and event.is_pressed():
-		if event.position < 360:
+	if event is InputEventScreenTouch and event.is_pressed():
+		if event.position.x < 360:
 			felpudo.esq()
 		else:
 			felpudo.dir()
+		felpudo.bater()
