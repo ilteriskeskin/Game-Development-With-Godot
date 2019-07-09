@@ -11,4 +11,4 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 403.445, 1465.98 )
+position = Vector2( 391.461, 1457.99 )

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Player_bullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/arbalet-pixilart.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 40.761, 21.0999 )
+
+[node name="Player" type="Area2D"]
+position = Vector2( 467.029, 398.258 )
+script = ExtResource( 1 )
+bullet = ExtResource( 2 )
+
+[node name="crossbow" type="Sprite" parent="."]
+position = Vector2( 47.3685, 33.6842 )
+scale = Vector2( 3.96053, 3.10526 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 41.0527, 38.9474 )
+shape = SubResource( 1 )
+
+[node name="bullet_container" type="Node" parent="."]
+
+[node name="muzzle" type="Position2D" parent="."]
+position = Vector2( 29.129, 9 )
+
+[node name="gun_timer" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
