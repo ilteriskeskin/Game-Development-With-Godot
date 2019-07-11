@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/Bird.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 30.698, 31.6999 )
+
+[node name="Bird" type="KinematicBody2D"]
+position = Vector2( 160.96, 85.2955 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="collison" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
