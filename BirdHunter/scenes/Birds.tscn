@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/1.png" type="Texture" id=1]
+[ext_resource path="res://assets/2.png" type="Texture" id=2]
+[ext_resource path="res://assets/3.png" type="Texture" id=3]
+[ext_resource path="res://assets/4.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Birds" type="Node2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 117.089, 228.027 )
+scale = Vector2( 3.08274, 3.66631 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 325.527, 144.263 )
+scale = Vector2( 3.08274, 3.66631 )
+frames = SubResource( 1 )
+frame = 3
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+position = Vector2( 518.38, 231.923 )
+scale = Vector2( 3.08274, 3.66631 )
+frames = SubResource( 1 )
+frame = 3
+playing = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
+position = Vector2( 693.702, 136.47 )
+scale = Vector2( 3.08274, 3.66631 )
+frames = SubResource( 1 )
+frame = 3
+playing = true
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
+position = Vector2( 872.92, 253.352 )
+scale = Vector2( 3.08274, 3.66631 )
+frames = SubResource( 1 )
+frame = 3
+playing = true
