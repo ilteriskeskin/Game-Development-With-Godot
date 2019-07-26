@@ -1,19 +1,32 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/background.jpg" type="Texture" id=1]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://assets/crossbow-pixilart.png" type="Texture" id=3]
-[ext_resource path="res://scenes/Birds.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/retro_sound .wav" type="AudioStream" id=4]
+[ext_resource path="res://scenes/Bird.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Score.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 88.3734, 22.7585 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 17.2254, 882.133 )
 
 [node name="World" type="Node2D"]
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="Background" type="StaticBody2D" parent="."]
+editor/display_folded = true
 
 [node name="Sprite" type="Sprite" parent="Background"]
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Player" type="KinematicBody2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Player"]
@@ -22,4 +35,39 @@ scale = Vector2( 2.64575, 2.92841 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="Birds" parent="." instance=ExtResource( 4 )]
+[node name="crossbow_collison" type="CollisionShape2D" parent="Player"]
+position = Vector2( 482.392, 1612.79 )
+shape = SubResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="Player"]
+position = Vector2( 400.414, 1440 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+editor/display_folded = true
+
+[node name="left_collison" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 998.776, 836.696 )
+shape = SubResource( 2 )
+
+[node name="right_collison" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -2.90686, 846.014 )
+shape = SubResource( 2 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="Bird" parent="." instance=ExtResource( 5 )]
+position = Vector2( 166.907, 213.27 )
+
+[node name="Bird2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 472.902, 169.998 )
+
+[node name="Bird3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 769.625, 207.088 )
+
+[node name="Score" parent="." instance=ExtResource( 6 )]
+margin_left = 797.443
+margin_top = 12.3635
+margin_right = 838.443
+margin_bottom = 26.3635

@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="Score" type="Label"]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_scale = Vector2( 4, 4 )
+text = "SCORE"
